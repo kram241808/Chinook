@@ -1,0 +1,20 @@
+-- Track Pricing Analysis
+-- Find tracks priced above the average unit price.
+-- Display track name, album, artist, genre, and unit price.
+
+-- Excludes NULL in average.  
+
+SELECT t.Name, a.Title AS Album, r.Name AS Artist_Name, g.Name AS Genre, t.UnitPrice
+FROM tracks t
+LEFT JOIN albums a
+ON t.Albumid = a.AlbumId
+LEFT JOIN genres g
+ON t.GenreId = g.GenreId
+LEFT JOIN artists r
+ON a.ArtistId = r.ArtistId
+WHERE UnitPrice > 
+(
+SELECT AVG(UnitPrice) AS AVG_UnitPrice
+FROM tracks
+)
+ORDER BY UnitPrice ASC
