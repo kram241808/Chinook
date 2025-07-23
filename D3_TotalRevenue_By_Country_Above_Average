@@ -1,0 +1,15 @@
+-- Analyze Revenue by Country Above Average
+SELECT BillingCountry, SUM(Total) AS TotalRevenue_By_Country
+FROM invoices
+GROUP BY BillingCountry
+-- Choosing only countries that have a total revenue larger than the average
+HAVING TotalRevenue_By_Country > (
+-- Average per country
+SELECT AVG(TotalRevenue_By_Country) AS AVGRevenue_By_Country
+FROM 
+-- Revenue per country
+(
+SELECT BillingCountry, SUM(Total) AS TotalRevenue_By_Country
+FROM Invoices
+GROUP BY BillingCountry))
+ORDER BY TotalRevenue_By_Country DESC
