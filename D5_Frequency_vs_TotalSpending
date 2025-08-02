@@ -1,0 +1,33 @@
+-- Identify customers with high frequency but low spending and low frequency but high spending.
+
+SELECT c.CustomerId , c.FirstName, c.LastName, 
+  SUM(i.Total) AS Customer_Total, 
+  COUNT(i.invoiceId) AS Purchase_Count, 
+CASE
+    WHEN COUNT(invoiceId) > (SELECT AVG(CountPerCustomer) FROM 
+        (SELECT COUNT(invoiceId) AS CountPerCustomer FROM invoices GROUP BY customerId))
+    AND SUM(i.Total) < (SELECT AVG(TotalPerCustomer) FROM 
+        (SELECT SUM(Total) AS TotalPerCustomer FROM invoices GROUP BY customerId))
+    THEN 'High Frequent Low Spending'
+    WHEN COUNT(invoiceId) < (SELECT AVG(CountPerCustomer) FROM 
+        (SELECT COUNT(invoiceId) AS CountPerCustomer FROM invoices GROUP BY customerId))
+    AND SUM(i.Total) > (SELECT AVG(TotalPerCustomer) FROM 
+        (SELECT SUM(Total) AS TotalPerCustomer FROM invoices GROUP BY customerId))
+    THEN 'High Frequent Low Spending'
+END AS Customer_Segment
+FROM invoices i
+LEFT JOIN customers c
+ON i.customerId = c.customerId
+GROUP BY i.customerId
+`
+/*  
+Result:  
+36 customers are identified as "High Frequency, Low Spending"
+0 customers were identified as Low Frequency, High Spending"
+
+Discussion:
+The range among total purchases for each customer is fairly tight between $36.64 and $49.62 and
+each customer purchases 7 times except one customer purchasing 6 times.  This analysis doesn't realy 
+present any useful information.  
+the 
+*/
