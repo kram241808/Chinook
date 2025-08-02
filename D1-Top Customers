@@ -1,8 +1,15 @@
 -- Find the top customers
--- This results in 59 rows (customers) ranging in values from $36.64 to $49.62
 SELECT c.customerId, c.FirstName, c.LastName, SUM(i.Total) AS Total_Spending
 FROM customers c
 LEFT JOIN invoices i
 ON c.CustomerId = i.CustomerId
 GROUP BY c.CustomerId
 ORDER BY Total_Spending DESC
+
+/*  Result:
+The top 3 customers are:
+Helena Holly ($ 49.62)
+Richard Cunningham ($ 47.62)
+Luis Rojas ($ 46.62)
+
+This results in 59 rows (customers) ranging in values from $36.64 to $49.62 */
