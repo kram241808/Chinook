@@ -1,6 +1,8 @@
 -- Summary Report
-The results of the 5 queries are presented below.  Because the data is contrived and the goal of this project
-is to learn and demonstrate SQL, no analysis will be performed.  
+The results of the 5 queries are presented below.  A casual review of the data and results were performed. 
+But given the data was contrived and the goal of this project is to learn and demonstrate basic SQL, 
+no deep analysis was performed.  Nevertheless, I have discussed some information that gives some 
+understanding of the results where it seems needed.
 
 Delivery 1:  Top 3 Customers
 
@@ -28,6 +30,7 @@ The countries with above average total purchases
 (5) Germany -156.48
 (6) United Kingdom - $112.86
 
+
 Delivery 4: Track Pricing Analysis
 
 There are 213 music tracks with unit prices above the average of price of $1.05.  These 213 tracks all have a price at $1.99.
@@ -35,4 +38,9 @@ The remaining 3290 tracks are priced at $0.99.
 
 Delivery 5:  Purchase Frequency Vs Total Spending
 
-Customers with 
+36 customers are identified as "High Frequency, Low Spending"
+0 customers were identified as Low Frequency, High Spending"
+
+The range among total purchases for each customer is fairly tight between $36.64 and $49.62 and
+each customer purchases 7 times except one customer purchasing 6 times.
+
