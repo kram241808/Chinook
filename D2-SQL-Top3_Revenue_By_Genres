@@ -1,0 +1,9 @@
+SELECT g.Name, SUM(i.UnitPrice*i.Quantity) AS Revenue
+FROM genres g
+LEFT JOIN Tracks t
+ON g.genreId = t.genreId
+LEFT JOIN invoice_items i
+ON t.trackId = i.trackId
+GROUP BY g.genreId
+ORDER BY Revenue DESC
+LIMIT 3
