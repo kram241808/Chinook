@@ -21,3 +21,13 @@ Metal $261.36
 There are tracks with no price (i.e., Null).  SQLite documentation states the SUM ignores NULL values in the SUM() function.
 
 Delivery 3:  Total Revenue By Country Above Average Revenue
+
+The countries with above average total purchases
+(1) USA - $523.06
+(2) Canada - $303.96
+(3) France - $195.10
+(4) Brazil - 190.10
+(5) Germany -156.48
+(6) United Kingdom - $112.86
+
+Delivery 4: 
