@@ -9,4 +9,12 @@ Luis Rojas ($ 46.62)
 
 This results in 59 rows (customers) ranging in values from $36.64 to $49.62 */
 
-Delivery 2:  Top 3 Genres
+Delivery 2:  Top 3 Revenue-Generating Genres
+--  There are tracks with no price (i.e., Null).  SQLite documentation states the SUM ignores NULL values in the SUM() function.
+-- This results in the following genres and revenue
+-- Rock $826.65
+-- Latin $382.14
+-- Metal $261.36
+-- Note:  In a real scenario, I would investigate how the music genres are defined (e.g., rock vs rock and roll vs metal)
+
+Delivery 3:  Total Revenue By Country Above Average Revenue
