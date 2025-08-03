@@ -1,1 +1,12 @@
 -- Report
+
+Delivery 1:  Top 3 Customers
+
+The top 3 customers are:
+Helena Holly ($ 49.62)
+Richard Cunningham ($ 47.62)
+Luis Rojas ($ 46.62)
+
+This results in 59 rows (customers) ranging in values from $36.64 to $49.62 */
+
+Delivery 2:  Top 3 Genres
