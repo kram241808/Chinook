@@ -1,7 +1,6 @@
 -- Track Pricing Analysis
--- Find tracks priced above the average unit price.
--- Display track name, album, artist, genre, and unit price.
 
+-- Find tracks priced above the average unit price.
 -- Excludes NULL in average.  
 
 SELECT t.Name, a.Title AS Album, r.Name AS Artist_Name, g.Name AS Genre, t.UnitPrice
