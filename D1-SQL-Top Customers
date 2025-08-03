@@ -5,3 +5,4 @@ LEFT JOIN invoices i
 ON c.CustomerId = i.CustomerId
 GROUP BY c.CustomerId
 ORDER BY Total_Spending DESC
+LIMIT 3
