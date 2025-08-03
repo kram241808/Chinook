@@ -1,8 +1,5 @@
 -- Summary Report
-The results of the 5 queries are presented below.  A casual review of the data and results were performed. 
-But given the data was contrived and the goal of this project is to learn and demonstrate basic SQL, 
-no deep analysis was performed.  Nevertheless, I have added some information that gives some 
-understanding of the results where it seems needed.  With Deliver 4 and 5, averages were calculated using SQL.
+The results of the 5 queries are presented below.  With Deliver 4 and 5, averages were calculated using SQL.
 
 In the case of Delivery 5, the SQL was complicated and a spreadsheet was used to verify my the results of my SQL.
 Although not practical for large datasets, I would imagine myself using a subset of the data as a way to verify 
